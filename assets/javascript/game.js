@@ -19,14 +19,13 @@
 
 // Array of options
 
-// var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 
-var gameStarted = false;
-var guess;
+var answer;
 var letters = [];
 var wrongGuess = [];
-var guessesRemaining;
+var guessesRemaining = 13;
 var wins = 0;
 var losses = 0;
 
@@ -40,19 +39,27 @@ var wordList = [
     "jason",
 ]
 
-function initialize() {
-    gameStarted = true;
-    var word = wordList[Math.floor(Math.random() * wordList.length)];
-    console.log(word);
-    guessesRemaining = 13;
-    document.getElementById("guesses-remaining").innerHTML = guessesRemaining;
-    for (i = 0; i < word.length; i++) {
-        letters[i] = "__";
-    }
-    document.getElementById("answer").innerHTML = letters.join(" ");
+var word = wordList[Math.floor(Math.random() * wordList.length)];
+console.log(word);
+
+
+function makeIntoDashes(word) {
+	var dashes = "";
+	for (i = 0; i < word.length - 1; i++) {
+        dashes += "_ ";
+	}
+	dashes += "_";
+    return dashes;
+    
 }
 
-function checkLetter(letter) {
+var wordAsDashes = makeIntoDashes(word);
+document.getElementById("answer").innerHTML = wordAsDashes;
+console.log(wordAsDashes)
+
+
+
+function checkLetter() {
     document.onkeyup = function(event) {
         guess = event.key.toLowerCase();
         var found = false;
@@ -63,6 +70,7 @@ function checkLetter(letter) {
                 found = true;
             } 
         }
+
         if (found) return;
         if (wrongGuess.indexOf(guess) < 0) {
             wrongGuess.push(guess);
@@ -75,7 +83,7 @@ function checkLetter(letter) {
 						console.log(losses);
 						confirm("YOU LOSE... play again?"); {
 							losses++;
-							counter = 7;
+							guessesRemaining = 13;
 							letters = [];
 							wrongGuess = [];
 							start();
@@ -86,7 +94,6 @@ function checkLetter(letter) {
         }
         
 
-// var wordAsDashes = document.getElementById("word-as-dashes");
 // var guessesRemaining = document.getElementById("guesses-remaining");
 // var lettersGuessed = document.getElementById("letters-guessed");
 // var outcomeText = document.getElementById("outcome");
