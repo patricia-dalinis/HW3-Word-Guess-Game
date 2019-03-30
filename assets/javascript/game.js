@@ -81,7 +81,7 @@ function checkLetter() {
 					if (guessesRemaining === 0) {
 						document.getElementById("losses").innerHTML = losses + 1;
 						console.log(losses);
-						confirm("YOU LOSE... play again?"); {
+						confirm("YOU DIED... Play again?"); {
 							losses++;
 							guessesRemaining = 13;
 							letters = [];
