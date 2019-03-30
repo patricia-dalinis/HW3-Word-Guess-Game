@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black
+}
+
+.header {
+    padding: 50px;
+    margin: 50px;
+    text-align: center;
+}
+
+h1 {
+    color: red;
+    font-size: 70px;
+    text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+    font-family: 'Nosifer', cursive;
+}
+
+h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: white;
+    padding: 40px 0px 0px 0px;
+}
+
+.wrapper {
+    width: 1024px;
+    margin: 40px auto;
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: white;
+    align-items: center;
+    text-align: center;
+}
+  
+#main-content,
+#sidebar {
+    width: 500px;
+    padding: 30px;
+}
+  
+#main-content {
+    float: right;
+    align-items: center;
+    text-align: center;
+    border: 1px solid red;
+    width: 600px;
+    padding: 30px;
+    line-height: 3em;
+}
+  
+#sidebar {
+    float: left;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    padding: 30px;
+    line-height: 3em;
+}
+
+
+
+
+/* Sources:
+    text-shadow trick for outline came from this suggestion: https://stackoverflow.com/questions/4919076/outline-effect-to-text
+
+*/
