@@ -86,13 +86,12 @@ function checkLetter() {
 							guessesRemaining = 13;
 							letters = [];
 							wrongGuess = [];
-							start();
 						}
 					}
 				}
 			}
         }
-        
+    checkLetter();   
 
 // var guessesRemaining = document.getElementById("guesses-remaining");
 // var lettersGuessed = document.getElementById("letters-guessed");
