@@ -50,13 +50,11 @@ function makeIntoDashes(word) {
 	}
 	dashes += "_";
     return dashes;
-    
 }
 
 var wordAsDashes = makeIntoDashes(word);
 document.getElementById("answer").innerHTML = wordAsDashes;
 console.log(wordAsDashes)
-
 
 
 function checkLetter() {
